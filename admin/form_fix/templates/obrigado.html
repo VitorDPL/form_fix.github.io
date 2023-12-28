@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+<style>
+
+    html{
+        font-size: 62,5%;
+    }
+
+    .div_pai{
+        text-align: center;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    h1{
+        font-size: 1.5rem;
+    }
+
+    h2{
+        font-size: 1rem;
+        color: red;
+    }
+
+    .div_filha{
+        display: inline-block;
+        border: 0.2rem solid black;
+        border-radius: 5rem;
+        padding: 2rem;
+    }
+
+
+    div img{
+        height: 5rem;
+        width: 15em;
+        text-align: center;
+    }
+
+    p span{
+        color: red;
+    }
+</style>
+
+<div class="div_pai">
+    <div class="div_filha">
+        <h1>
+            Para resgatar seu desconto, basta clicar no botão abaixo e nos enviar uma mensagem via WhatsApp.
+        </h1>
+        <h2>
+            OBS: Atente-se às regras da promoção.
+        </h2>
+        <ul>
+            <li>
+                <p>
+                    Para participar, é <span>extremamente proibido</span> colocar duração nas conversas do WhatsApp. Perfis com limitação de tempo nos chats <span>não serão aceitos</span>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Cada pessoa poderá participar apenas <span>[UMA]</span> vez, podendo receber um desconto de 5%, 7% ou 10% em compras na loja.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Cada pessoa precisará levar um documento com foto para a identificação na loja.
+                </p>
+            </li>
+        </ul>
+        <div>
+            <a href="https://wa.me/32999477844?text=Ol%C3%A1%20!%20Vim%20pelo%20Instagram%20da%20Fixa%C3%A7%C3%A3o%20e%20desejo%20resgatar%20o%20meu%20desconto."><img src="{{ url_for('static', filename='Whatsapp.png') }}" class="" alt="..."></a>
+        </div>
+    </div>
+    
+</div>
+
+{% endblock %}

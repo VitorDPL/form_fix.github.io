@@ -1,0 +1,201 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+<style>
+
+    html{
+          font-size: 62,5%;
+        }
+
+    h1 span{
+      color: rgb(58, 58, 47);
+    }
+
+    h2{
+      font-size: 1.5rem;
+      color: red;
+    }
+
+    h3{
+      font-size: 1rem;
+    }
+
+    fieldset{
+      text-align: center;
+      
+    }
+
+    .classecabeçalho{
+        font-size: 1rem;
+        font-family: 'Montserrat', sans-serif;
+        color: black;
+    }
+
+    .classelogin{
+        color: black;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1rem;
+    }
+
+    
+    .div_principal{
+      text-align: center;
+      border: 0.1rem solid black;
+      border-radius: 5rem;
+      
+    }
+
+    div .div_solo{
+      margin: 0.2rem;
+    }
+
+    div .div_pai_labels{
+      display: flex;
+      justify-content: center;
+      padding: 0.1rem;
+    }
+
+    div .agrupamento{
+      text-align: center;
+      margin: 1rem;
+    }
+
+</style>
+
+
+
+<hr>
+
+<div class="container div_principal">
+  <div class="row">
+    <div class="column">
+      <form method="POST" action="" class=" p-4">
+        {{ form_login.csrf_token }}
+        <h1>
+          Campo promocional <span>FIXAÇÃO - JF</span>
+        </h1>
+        <h2>
+          IMPORTANTE !
+        </h2>
+        <ul>
+          <li>
+            <p>
+              Ao enviar os seus dados (Nome completo, E-mail e telefone celular), você automaticamente aceitará receber promoções EXCLUSIVAS através desses meios.
+            </p>
+          </li>
+          <li>
+            <p>
+              Seus dados NÃO SERÃO UTILIZADOS fora da loja.
+            </p>
+          </li>
+        </ul>
+        <fieldset >
+          <div class="form-group">
+            {{ form_login.username.label(class='form-control-label mt-2 class-labels') }}
+            {{ form_login.username(class='form-control ', placeholder='Insira o seu nome completo aqui') }}
+          </div>
+
+          <div class="form-group">
+            {{ form_login.email.label(class='form-control-label mt-2 class-labels') }}
+            
+            {% if form_login.email.errors %}
+              {{ form_login.email(class='form-control is-invalid') }}
+              <div class="invalid-feedback">
+                {% for erro in form_login.email.errors %}
+                  {{ erro }}
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form_login.email(class='form-control', placeholder='Insira o seu melhor e-mail') }}
+            {% endif %}
+
+          </div>
+
+          <div class="form-group">
+            {{ form_login.telefone.label(class='form-control-label mt-2 class-labels') }}
+            {{ form_login.telefone(class='form-control', placeholder='(DDD) XXXXX-XXXX') }} 
+          </div>
+
+        <h3 class="text-center mt-5 mb-5">
+          Selecione abaixo qual(quais) tamanho(s) são de seu interesse: 
+        </h3>
+
+        <div>
+          
+          <div class="div_pai_labels">
+
+            <div class="agrupamento">
+              <div class="div_solo">
+                {{ form_login.peca_42.label(class='form-check-label class-margem-left') }}
+                {{ form_login.peca_42(class='form-check-input ') }}
+              </div>
+              <div class="div_solo">
+                {{ form_login.peca_44.label(class='form-check-label') }}
+                {{ form_login.peca_44(class='form-check-input ') }}
+              </div>
+              <div class="div_solo">
+                {{ form_login.peca_46.label(class='form-check-label') }}
+                {{ form_login.peca_46(class='form-check-input') }}
+              </div>
+            </div>
+          
+          <div class="agrupamento">
+            <div class="div_solo">
+              {{ form_login.peca_48.label(class='form-check-label class-margem-left') }}
+              {{ form_login.peca_48(class='form-check-input class-margem-right') }}
+            </div>
+            <div class="div_solo">
+              {{ form_login.peca_50.label(class='form-check-label') }}
+              {{ form_login.peca_50(class='form-check-input class-margem-right') }}
+            </div>
+            <div class="div_solo">
+              {{ form_login.peca_52.label(class='form-check-label') }}
+              {{ form_login.peca_52(class='form-check-input') }}
+            </div>
+          </div>
+
+          <div class="agrupamento">
+            <div class="div_solo">
+              {{ form_login.peca_54.label(class='form-check-label class-margem-left') }}
+              {{ form_login.peca_54(class='form-check-input class-margem-right') }}
+            </div>
+            <div class="div_solo">
+              {{ form_login.peca_56.label(class='form-check-label') }}
+              {{ form_login.peca_56(class='form-check-input class-margem-right') }}
+            </div>
+            <div class="div_solo">
+              {{ form_login.peca_58.label(class='form-check-label') }}
+              {{ form_login.peca_58(class='form-check-input') }}
+            </div>
+            </div>
+          <div class="agrupamento">
+            <div class="div_solo">
+              {{ form_login.peca_60.label(class='form-check-label class-margem-left') }}
+              {{ form_login.peca_60(class='form-check-input class-margem-right') }}
+            </div>
+            <div class="div_solo">
+              {{ form_login.peca_62.label(class='form-check-label') }}
+              {{ form_login.peca_62(class='form-check-input class-margem-right') }}
+            </div>
+            <div class="div_solo">
+              {{ form_login.peca_64.label(class='form-check-label') }}
+              {{ form_login.peca_64(class='form-check-input') }}
+            </div>
+        </div>
+        </div>
+        </fieldset> 
+          
+          <div class="div_button">
+            {{ form_login.botao_submit(class='btn btn-dark mt-5') }}
+          </div>
+
+        </div>  
+      </form>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,6 @@
+A modularização funciona assim:
+- cria-se uma pasta que englobe todo o projeto.
+- cria-se uma outra pasta com um arquivo __init__.py  dentro.
+- cria-se todos os arquivos dentro dessa segunda pasta.
+
+- cria-se o main.py(nome não obrigatório) fora da segunda pasta, mas dentro da primeira.
